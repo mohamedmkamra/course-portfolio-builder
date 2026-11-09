@@ -48,10 +48,14 @@ npm run preview
 
 The static website is generated in `dist/`. ZIP export works without a server; writing directly to a selected folder additionally requires browser support for the File System Access API.
 
-## GitHub Pages later
+## GitHub Pages
 
 The app can be hosted as a static site. Vite uses relative asset paths (`base: "./"`) so the build can be served at a repository URL such as `https://<username>.github.io/<repository>/`.
 
-When ready to publish, use the [official Vite GitHub Pages deployment guide](https://vite.dev/guide/static-deploy#github-pages): select **GitHub Actions** in the repository's **Settings → Pages**, and add the documented workflow to install dependencies with `npm ci`, run `npm run build`, and deploy `dist/`. Keep this project's relative `base` setting; it does not need a repository name hardcoded into it.
+The published app is available at [mohamedmkamra.github.io/course-portfolio-builder](https://mohamedmkamra.github.io/course-portfolio-builder/).
 
-Commit the source and `package-lock.json`. The `.gitignore` excludes dependencies, generated build output, generated configuration files, and local `.tar.gz` archives. No deployment workflow is enabled yet.
+The deployment workflow in `.github/workflows/deploy.yml` runs automatically on pushes to `main` and can also be started manually from **Actions → Deploy to GitHub Pages → Run workflow**. It installs dependencies with `npm ci`, builds the app, and deploys only `dist/`. Build and deployment results are available in the repository's **Actions** tab.
+
+For forks, select **GitHub Actions** in **Settings → Pages** before running the workflow. See the [official Vite deployment guide](https://vite.dev/guide/static-deploy#github-pages). Keep this project's relative `base` setting; it does not need a repository name hardcoded into it.
+
+Commit the source and `package-lock.json`. The `.gitignore` excludes dependencies, generated build output, generated configuration files, and local `.tar.gz` archives.
