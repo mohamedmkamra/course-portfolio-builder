@@ -33,7 +33,7 @@ function App() {
   const [mobileLeftOpen, setMobileLeftOpen] = useState(false);
   const [mobileRightOpen, setMobileRightOpen] = useState(false);
   const [statusMessage, setStatusMessage] = useState("Autosave active.");
-  const [workspaceMode, setWorkspaceMode] = useState<WorkspaceMode>("builder");
+  const [workspaceMode, setWorkspaceMode] = useState<WorkspaceMode>("populate");
   const importTemplateInputRef = useRef<HTMLInputElement | null>(null);
   const [selectedNodeIds, setSelectedNodeIds] = useState<string[]>([]);
 
